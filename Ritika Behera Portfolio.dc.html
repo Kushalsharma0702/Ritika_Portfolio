@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#222222;background:#F7F2EA;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  ::selection{background:#F4C95D;color:#222}
+  a{color:inherit}
+  @keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  @keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(13px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0)}50%{transform:translate(0,-10px)}}
+  @keyframes drift{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(6px,-8px) rotate(6deg)}}
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;overflow:hidden">
+
+<div style="position:fixed;inset:0;pointer-events:none;z-index:60;opacity:0.05;mix-blend-mode:multiply;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+
+<!-- NAV -->
+<nav style="{{ navStyle }}">
+  <a href="#top" style="font-family:'Playfair Display',serif;font-weight:700;font-size:21px;letter-spacing:.3px;text-decoration:none;color:#222">Ritika Behera</a>
+  <div style="display:flex;gap:30px;align-items:center;font-size:13px;letter-spacing:.04em;font-weight:500">
+    <a href="#story" style="text-decoration:none;color:#222;opacity:.72" style-hover="opacity:1">Story</a>
+    <a href="#toolkit" style="text-decoration:none;color:#222;opacity:.72" style-hover="opacity:1">Toolkit</a>
+    <a href="#stories" style="text-decoration:none;color:#222;opacity:.72" style-hover="opacity:1">Work</a>
+    <a href="#beyond" style="text-decoration:none;color:#222;opacity:.72" style-hover="opacity:1">Beyond</a>
+    <a href="#contact" style="display:inline-block;text-decoration:none;background:#222;color:#FFFDF8;padding:9px 18px;border-radius:2px;letter-spacing:.06em" style-hover="background:#F28C82;color:#222">Say hello</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" style="max-width:1240px;margin:0 auto;padding:140px 32px 70px;position:relative">
+  <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+
+    <div style="flex:1 1 440px;min-width:300px">
+      <div data-reveal style="display:inline-flex;align-items:center;gap:10px;font-family:'Inter';font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#9a7b5e;margin-bottom:26px">
+        <span style="width:34px;height:1px;background:#c9a87f"></span>Communications · Journalism · Storytelling · Media
+      </div>
+      <h1 data-reveal style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(44px,6.6vw,86px);line-height:1.02;letter-spacing:-0.01em;margin:0 0 28px">
+        Every story<br>deserves to be
+        <span style="position:relative;display:inline-block;font-style:italic;font-weight:600">
+          <span style="position:relative;z-index:1;background:linear-gradient(180deg,transparent 60%,rgba(244,201,93,.75) 60%,rgba(244,201,93,.75) 92%,transparent 92%)">heard</span>.
+        </span>
+      </h1>
+      <p data-reveal style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.4vw,27px);line-height:1.5;color:#4a4a44;max-width:480px;margin:0 0 38px">
+        I transform ideas, experiences, and human stories into communication that people remember, feel, and carry with them.
+      </p>
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px">
+        <a href="#story" style="display:inline-flex;align-items:center;gap:10px;background:#222;color:#FFFDF8;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.04em;padding:16px 26px;border-radius:2px;transition:transform .3s,background .3s" style-hover="transform:translateY(-3px);background:#F28C82;color:#222">Read my story →</a>
+        <a href="#stories" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#222;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.04em;padding:16px 26px;border:1px solid #cbb89c;border-radius:2px;transition:border-color .3s,background .3s" style-hover="background:#FFFDF8;border-color:#222">Explore my work</a>
+      </div>
+    </div>
+
+    <!-- COLLAGE -->
+    <div data-reveal style="flex:1 1 380px;min-width:300px;display:flex;justify-content:center">
+      <div style="position:relative;width:100%;max-width:430px;aspect-ratio:4/5">
+        <!-- newspaper clipping behind -->
+        <div style="position:absolute;left:2%;top:6%;width:46%;height:38%;background:#FFFDF8;border:1px solid #e7ddc9;transform:rotate(-6deg);box-shadow:0 18px 40px -20px rgba(60,40,20,.35);padding:12px">
+          <div style="height:8px;width:70%;background:#222;margin-bottom:8px"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:11px;line-height:1.25;color:#777">Lorem ipsum dolor sit amet consectetur adipiscing. Praesent et nulla vitae.</div>
+          <div style="margin-top:7px;height:30%;background:repeating-linear-gradient(135deg,#ece3d2,#ece3d2 5px,#f6efe1 5px,#f6efe1 10px)"></div>
+        </div>
+        <!-- film strip -->
+        <div style="position:absolute;right:0;top:0;width:20%;height:64%;background:#222;border-radius:3px;transform:rotate(5deg);padding:14px 4px;display:flex;flex-direction:column;gap:5px;box-shadow:0 16px 34px -18px rgba(0,0,0,.5)">
+          <div style="flex:1;background:#8FA998;border-radius:1px"></div>
+          <div style="flex:1;background:#8CC7E8;border-radius:1px"></div>
+          <div style="flex:1;background:#F4C95D;border-radius:1px"></div>
+          <div style="flex:1;background:#F28C82;border-radius:1px"></div>
+        </div>
+        <!-- main polaroid -->
+        <div style="position:absolute;left:14%;top:22%;width:62%;background:#FFFDF8;padding:13px 13px 52px;transform:rotate(-3deg);box-shadow:0 30px 60px -24px rgba(60,40,20,.45);border:1px solid #f0e7d6">
+          <div style="aspect-ratio:4/5;background:#ddd url('images/ritika.jpg') center/cover;filter:grayscale(1) contrast(1.04)"></div>
+          <div style="position:absolute;left:0;right:0;bottom:16px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#5b5246">— the storyteller —</div>
+        </div>
+        <!-- sticky note -->
+        <div style="position:absolute;left:0;bottom:4%;width:34%;background:#C8B6FF;padding:14px 12px;transform:rotate(-7deg);box-shadow:0 14px 30px -16px rgba(60,40,20,.4);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.25;color:#34304a">"go where the story is"</div>
+        <!-- floating accents -->
+        <div style="position:absolute;right:6%;bottom:8%;width:62px;height:62px;border-radius:50%;background:#F28C82;animation:floatA 6s ease-in-out infinite;box-shadow:0 10px 24px -10px rgba(242,140,130,.7)"></div>
+        <div style="position:absolute;left:40%;top:-3%;width:26px;height:26px;border-radius:50%;background:#F4C95D;animation:floatB 5s ease-in-out infinite"></div>
+        <div style="position:absolute;right:30%;top:46%;width:14px;height:14px;border-radius:50%;background:#8FA998;animation:floatC 7s ease-in-out infinite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-reveal style="margin-top:64px;display:flex;align-items:center;gap:16px;color:#9a7b5e;font-size:12px;letter-spacing:.22em;text-transform:uppercase">
+    <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;color:#5b5246">Scroll to begin the story</span>
+    <span style="flex:1;height:1px;background:linear-gradient(90deg,#c9a87f,transparent)"></span>
+  </div>
+</header>
+
+<!-- SECTION 2: STORY TIMELINE -->
+<section id="story" style="max-width:1100px;margin:0 auto;padding:90px 32px 30px">
+  <div data-reveal style="margin-bottom:14px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#9a7b5e">Chapter 01</div>
+  <h2 data-reveal style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.04;margin:0 0 18px">My story so far</h2>
+  <p data-reveal style="font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.2vw,24px);color:#5b5246;max-width:560px;margin:0 0 64px">Not a résumé — a route. Four chapters that taught me how stories are found, shaped, and carried to the people who need them.</p>
+
+  <div style="position:relative">
+    <div style="position:absolute;left:9px;top:6px;bottom:40px;width:2px;background:linear-gradient(180deg,#e3d6bf,#e3d6bf 90%,transparent)"></div>
+    <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="4">
+      <div data-reveal data-delay="{{ t.d }}" style="position:relative;padding-left:54px;margin-bottom:46px">
+        <div style="position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;background:{{ t.tone }};border:4px solid #F7F2EA;box-shadow:0 0 0 1px #e3d6bf"></div>
+        <div style="background:#FFFDF8;border:1px solid #efe6d4;border-radius:5px;padding:30px 32px;box-shadow:0 22px 44px -34px rgba(60,40,20,.45);transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-4px);box-shadow:0 30px 54px -30px rgba(60,40,20,.5)">
+          <span style="display:inline-block;font-family:'Playfair Display',serif;font-size:13px;font-weight:600;letter-spacing:.16em;color:{{ t.tone }};background:{{ t.toneSoft }};padding:5px 13px;border-radius:30px;margin-bottom:13px">{{ t.year }}</span>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(22px,3vw,30px);line-height:1.06;margin:0 0 5px">{{ t.org }}</h3>
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9a7b5e;margin-bottom:16px">{{ t.role }}</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);line-height:1.35;color:#2c2c2c;margin:0 0 14px">"{{ t.quote }}"</p>
+          <p style="font-size:15.5px;color:#55524a;margin:0 0 18px;max-width:620px">{{ t.body }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ t.tags }}" as="tag" hint-placeholder-count="3">
+              <span style="font-size:12px;letter-spacing:.04em;color:#6a665c;border:1px solid #e3d6bf;padding:5px 12px;border-radius:30px;background:#fbf6ec">{{ tag }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- SECTION 3: TOOLKIT -->
+<section id="toolkit" style="max-width:1180px;margin:0 auto;padding:70px 32px">
+  <div data-reveal style="margin-bottom:14px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#9a7b5e">Chapter 02</div>
+  <h2 data-reveal style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.04;margin:0 0 46px">The storytelling toolkit</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:22px">
+    <sc-for list="{{ toolkit }}" as="k" hint-placeholder-count="4">
+      <div data-reveal data-delay="{{ k.d }}" style="position:relative;background:{{ k.color }};border-radius:8px;padding:30px 28px 34px;overflow:hidden;min-height:280px;display:flex;flex-direction:column;transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s" style-hover="transform:translateY(-8px) rotate(-1deg);box-shadow:0 34px 50px -28px rgba(60,40,20,.55)">
+        <div style="position:absolute;right:-10px;top:-22px;font-family:'Playfair Display',serif;font-weight:800;font-size:120px;color:rgba(255,255,255,.32);line-height:1">{{ k.num }}</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;color:#23201a;position:relative;margin-bottom:18px">{{ k.title }}</div>
+        <div style="display:flex;flex-direction:column;gap:9px;position:relative">
+          <sc-for list="{{ k.items }}" as="it" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:9px;font-size:14.5px;color:#2c2820;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:#23201a;opacity:.55"></span>{{ it }}</div>
+          </sc-for>
+        </div>
+        <div style="margin-top:auto;padding-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#3a352a;opacity:.78">{{ k.note }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- SECTION 4: FEATURED STORIES -->
+<section id="stories" style="max-width:1180px;margin:0 auto;padding:70px 32px">
+  <div data-reveal style="margin-bottom:14px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#9a7b5e">Chapter 03</div>
+  <div data-reveal style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:44px">
+    <h2 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.04;margin:0">Featured stories</h2>
+    <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#5b5246">selected work · click any cover to read</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+      <div data-reveal data-delay="{{ p.d }}" role="button" tabindex="0" onClick="{{ p.open }}" style="position:relative;cursor:pointer;background:#FFFDF8;border:1px solid #efe6d4;border-radius:6px;overflow:hidden;box-shadow:0 22px 44px -34px rgba(60,40,20,.45);transition:transform .4s,box-shadow .4s" style-hover="transform:translateY(-6px);box-shadow:0 36px 56px -30px rgba(60,40,20,.5)">
+        <div style="position:relative;aspect-ratio:3/2;background:{{ p.cover }};display:flex;align-items:flex-end;padding:20px;overflow:hidden">
+          <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.16) 10px,transparent 10px,transparent 22px)"></div>
+          <div style="position:absolute;top:16px;left:16px;font-family:'Inter';font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;background:#23201a;color:#FFFDF8;padding:5px 11px;border-radius:30px">{{ p.kind }}</div>
+          <div style="position:absolute;top:14px;right:16px;font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:rgba(35,32,26,.7)">{{ p.year }}</div>
+          <div style="position:relative;font-family:monospace;font-size:11px;letter-spacing:.05em;color:rgba(35,32,26,.62);background:rgba(255,253,248,.55);padding:4px 9px;border-radius:3px">▦ {{ p.coverLabel }}</div>
+        </div>
+        <div style="padding:22px 24px 26px">
+          <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:25px;line-height:1.1;margin:0 0 10px">{{ p.title }}</h3>
+          <p style="font-size:14.5px;color:#55524a;margin:0 0 16px">{{ p.tagline }}</p>
+          <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.05em;color:#b15b50">Read the story →</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- SECTION 5: BEYOND THE STORIES (scrapbook) -->
+<section id="beyond" style="max-width:1180px;margin:0 auto;padding:80px 32px">
+  <div data-reveal style="margin-bottom:14px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#9a7b5e">Chapter 04</div>
+  <h2 data-reveal style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.04;margin:0 0 8px">Beyond the stories</h2>
+  <p data-reveal style="font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.2vw,24px);color:#5b5246;max-width:520px;margin:0 0 56px">The corners of a life that keep the work curious.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:30px;justify-content:center;align-items:flex-start">
+    <sc-for list="{{ interests }}" as="g" hint-placeholder-count="4">
+      <div data-reveal data-delay="{{ g.d }}" style="width:235px;background:#FFFDF8;padding:14px 14px 0;transform:rotate({{ g.rot }});box-shadow:0 24px 44px -28px rgba(60,40,20,.5);border:1px solid #f0e7d6;transition:transform .4s" style-hover="transform:rotate(0deg) translateY(-6px) scale(1.03)">
+        <div style="aspect-ratio:1/1;background:{{ g.cover }};display:flex;align-items:center;justify-content:center;filter:saturate(.92)">
+          <span style="font-family:monospace;font-size:10.5px;letter-spacing:.06em;color:rgba(35,32,26,.6);background:rgba(255,253,248,.6);padding:4px 9px;border-radius:3px">▦ {{ g.shot }}</span>
+        </div>
+        <div style="padding:16px 6px 22px;text-align:center">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:23px;color:#2c2c2c">{{ g.label }}</div>
+          <div style="font-size:12px;color:#8a8578;letter-spacing:.03em;margin-top:3px">{{ g.cap }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- SECTION 6: CINEMATIC QUOTE -->
+<section style="position:relative;margin:40px 0;padding:clamp(80px,12vw,150px) 32px;background:#23201a;color:#F7F2EA;overflow:hidden">
+  <div style="position:absolute;inset:0;opacity:.07;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E&quot;)"></div>
+  <div style="position:absolute;left:8%;top:18%;width:120px;height:120px;border-radius:50%;background:#F28C82;opacity:.22;animation:floatA 8s ease-in-out infinite;filter:blur(2px)"></div>
+  <div style="position:absolute;right:10%;bottom:14%;width:80px;height:80px;border-radius:50%;background:#8CC7E8;opacity:.2;animation:floatB 7s ease-in-out infinite;filter:blur(2px)"></div>
+  <div data-reveal style="position:relative;max-width:1000px;margin:0 auto;text-align:center">
+    <div style="font-family:'Playfair Display',serif;font-size:90px;line-height:.5;color:#F4C95D;margin-bottom:6px">“</div>
+    <p style="font-family:'Playfair Display',serif;font-weight:600;font-style:italic;font-size:clamp(30px,5.4vw,66px);line-height:1.12;letter-spacing:-0.01em;margin:0">Stories are not just told.<br>They are <span style="color:#F4C95D">felt</span>, <span style="color:#F28C82">remembered</span>, and <span style="color:#8CC7E8">shared</span>.</p>
+    <div style="margin-top:34px;font-family:'Inter';font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b6ad9a">Ritika Behera · the things I believe in</div>
+  </div>
+</section>
+
+<!-- SECTION 7: LANGUAGES (passport stamps) -->
+<section id="languages" style="max-width:1100px;margin:0 auto;padding:84px 32px 50px">
+  <div data-reveal style="text-align:center;margin-bottom:12px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#9a7b5e">Chapter 05 · the passport</div>
+  <h2 data-reveal style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(32px,4.6vw,54px);text-align:center;margin:0 0 8px">Languages I tell stories in</h2>
+  <p data-reveal style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#5b5246;text-align:center;margin:0 0 50px">Collected like stamps — every one a new audience.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:26px;justify-content:center">
+    <sc-for list="{{ languages }}" as="l" hint-placeholder-count="4">
+      <div data-reveal data-delay="{{ l.d }}" style="position:relative;width:180px;height:180px;border:2.5px dashed {{ l.color }};border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#FFFDF8;transform:rotate({{ l.rot }});transition:transform .35s,box-shadow .35s;box-shadow:0 16px 34px -26px rgba(60,40,20,.5)" style-hover="transform:rotate(0deg) scale(1.06);box-shadow:0 26px 44px -22px rgba(60,40,20,.55)">
+        <div style="position:absolute;inset:14px;border:1.5px solid {{ l.color }};border-radius:50%;opacity:.4"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:{{ l.color }};line-height:1">{{ l.native }}</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:600;margin-top:4px">{{ l.name }}</div>
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#9a7b5e;margin-top:6px">{{ l.level }}</div>
+        <div style="position:absolute;bottom:26px;font-family:monospace;font-size:9px;letter-spacing:.2em;color:{{ l.color }};opacity:.7">{{ l.code }} ✦ {{ l.code }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="max-width:780px;margin:0 auto;padding:70px 32px 40px">
+  <div data-reveal style="position:relative;background:#FFFDF8;border:1px solid #ece2cf;border-radius:4px;padding:clamp(34px,5vw,60px);box-shadow:0 40px 70px -40px rgba(60,40,20,.5);transform:rotate(-0.6deg);background-image:linear-gradient(#f4ead7 1px,transparent 1px);background-size:100% 34px;background-position:0 92px">
+    <div style="position:absolute;top:-14px;left:38px;background:#F28C82;color:#23201a;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;border-radius:30px;transform:rotate(-3deg);box-shadow:0 8px 18px -10px rgba(242,140,130,.8)">a note for you</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#8a8578;margin-bottom:6px">Dear reader,</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(28px,4.4vw,46px);line-height:1.08;margin:0 0 18px">Let's create meaningful stories together.</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.55;color:#4a473f;max-width:540px;margin:0 0 30px">If you have a story worth telling — a campaign, a community, a cause, a conversation — I'd love to help you tell it well. Write to me; I read every letter.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:30px">
+      <a href="mailto:ritika.behera02@gmail.com" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#23201a;color:#FFFDF8;font-size:14px;font-weight:500;padding:15px 24px;border-radius:2px;transition:transform .3s,background .3s" style-hover="transform:translateY(-3px);background:#F28C82;color:#23201a">✉ ritika.behera02@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ritika-behera-949320227/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;border:1px solid #cbb89c;color:#23201a;font-size:14px;font-weight:500;padding:15px 24px;border-radius:2px;transition:background .3s,border-color .3s" style-hover="background:#F7F2EA;border-color:#23201a">in · LinkedIn</a>
+      <a href="tel:+919311684699" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;border:1px solid #cbb89c;color:#23201a;font-size:14px;font-weight:500;padding:15px 24px;border-radius:2px;transition:background .3s,border-color .3s" style-hover="background:#F7F2EA;border-color:#23201a">☎ +91 93116 84699</a>
+    </div>
+
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#8a8578">With warmth,</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:38px;color:#23201a;margin-top:2px">Ritika</div>
+        <div style="font-size:12px;color:#9a7b5e;letter-spacing:.04em;margin-top:6px">BA (Hons) Journalism · Lady Shri Ram College for Women</div>
+      </div>
+      <!-- envelope -->
+      <div style="position:relative;width:96px;height:64px">
+        <div style="position:absolute;inset:0;background:#F4C95D;border-radius:3px;box-shadow:0 12px 24px -14px rgba(60,40,20,.6)"></div>
+        <div style="position:absolute;left:0;right:0;top:0;height:0;border-left:48px solid transparent;border-right:48px solid transparent;border-top:34px solid #e7b94a;animation:floatC 6s ease-in-out infinite"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center;padding:54px 0 20px;color:#9a7b5e;font-size:12.5px;letter-spacing:.05em">
+    <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:#5b5246">Every story deserves to be heard.</span><br><br>
+    © 2026 Ritika Behera · Communications · Storytelling · Media
+  </footer>
+</section>
+
+<!-- MODAL -->
+<sc-if value="{{ active }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:100;background:rgba(35,32,26,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto">
+    <div onClick="{{ stop }}" style="position:relative;width:100%;max-width:760px;background:#F7F2EA;border-radius:8px;overflow:hidden;box-shadow:0 50px 100px -40px rgba(0,0,0,.6);margin:auto">
+      <div style="position:relative;aspect-ratio:16/7;background:{{ active.cover }};display:flex;align-items:flex-end;padding:28px;overflow:hidden">
+        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.16) 12px,transparent 12px,transparent 26px)"></div>
+        <button onClick="{{ close }}" aria-label="Close" style="position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:none;background:#23201a;color:#FFFDF8;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .3s" style-hover="transform:rotate(90deg)">✕</button>
+        <div style="position:relative">
+          <div style="font-family:'Inter';font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;background:#23201a;color:#FFFDF8;padding:5px 12px;border-radius:30px;display:inline-block;margin-bottom:12px">{{ active.kind }} · {{ active.year }}</div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(26px,4vw,42px);line-height:1.04;margin:0;color:#23201a">{{ active.title }}</h3>
+        </div>
+      </div>
+
+      <div style="padding:clamp(26px,4vw,44px)">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:23px;font-style:italic;line-height:1.45;color:#3a372f;margin:0 0 28px">{{ active.tagline }}</p>
+
+        <div style="margin-bottom:26px">
+          <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a7b5e;margin-bottom:8px">Overview</div>
+          <p style="font-size:15.5px;line-height:1.7;color:#4a473f;margin:0">{{ active.overview }}</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-bottom:28px">
+          <div>
+            <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a7b5e;margin-bottom:10px">Objectives</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ active.objectives }}" as="o" hint-placeholder-count="3">
+                <div style="display:flex;gap:9px;font-size:14.5px;color:#4a473f;line-height:1.4"><span style="color:#F28C82;font-weight:700">—</span>{{ o }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a7b5e;margin-bottom:10px">Outcomes</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ active.outcomes }}" as="oc" hint-placeholder-count="3">
+                <div style="display:flex;gap:9px;font-size:14.5px;color:#4a473f;line-height:1.4"><span style="color:#8FA998;font-weight:700">✓</span>{{ oc }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:30px">
+          <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a7b5e;margin-bottom:8px">The storytelling process</div>
+          <p style="font-size:15.5px;line-height:1.7;color:#4a473f;margin:0">{{ active.process }}</p>
+        </div>
+
+        <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a7b5e;margin-bottom:12px">Gallery</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+          <sc-for list="{{ active.gallery }}" as="img" hint-placeholder-count="3">
+            <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#ece3d2,#ece3d2 9px,#f6efe1 9px,#f6efe1 18px);border:1px solid #e3d6bf;border-radius:5px;display:flex;align-items:center;justify-content:center">
+              <span style="font-family:monospace;font-size:10.5px;letter-spacing:.05em;color:#9a8d76">▦ {{ img }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: null, scrolled: false };
+
+  componentDidMount() {
+    // Scroll reveals — mutate DOM directly so React re-renders never clobber them
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -7% 0px' });
+
+    this._raf = requestAnimationFrame(() => {
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        const d = el.getAttribute('data-delay') || 0;
+        el.style.transition = 'opacity .8s cubic-bezier(.22,.61,.36,1) ' + d + 'ms, transform .8s cubic-bezier(.22,.61,.36,1) ' + d + 'ms';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        el.style.willChange = 'opacity, transform';
+        this._io.observe(el);
+      });
+    });
+
+    this._onScroll = () => {
+      const s = window.scrollY > 36;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+
+    this._onKey = (e) => { if (e.key === 'Escape') this.setState({ active: null }); };
+    window.addEventListener('keydown', this._onKey);
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('keydown', this._onKey);
+  }
+
+  renderVals() {
+    const navStyle = 'position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:' +
+      (this.state.scrolled ? '14px' : '22px') + ' clamp(20px,4vw,46px);transition:all .4s ease;' +
+      (this.state.scrolled
+        ? 'background:rgba(247,242,234,.86);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(60,40,20,.08)'
+        : 'background:transparent');
+
+    const timeline = [
+      { year: '2022', org: 'CHETNA NGO', role: 'Communications Intern · Delhi NCR', tone: '#F28C82', toneSoft: 'rgba(242,140,130,.16)',
+        quote: 'Where I learned that communication begins with listening.',
+        body: 'A summer spent inside the Child Care Centres, working alongside children in street situations. Before I wrote a single word, I learned to sit with people and listen — to the small, ordinary stories that rarely make headlines but hold entire worlds inside them.',
+        tags: ['Community', 'Children', 'Human stories'], d: 0 },
+      { year: '2023–24', org: 'INVINCIBLE DIGITAL', role: 'SEO & Content Associate', tone: '#8CC7E8', toneSoft: 'rgba(140,199,232,.18)',
+        quote: 'How stories travel through search to find the right people.',
+        body: 'Here I learned the quiet architecture behind visibility — keywords, search intent, and the data that decides whether a story is ever found. Collaborating with content creators and reading the analytics, I turned organic traffic into measurable growth, and discovered that reach is its own kind of craft.',
+        tags: ['SEO', 'Content visibility', 'Digital growth'], d: 90 },
+      { year: '2024', org: 'VARAHE ANALYTICS', role: 'Media Associate', tone: '#F4C95D', toneSoft: 'rgba(244,201,93,.2)',
+        quote: 'Turning everyday conversations into media people feel.',
+        body: 'Daily content, fast cycles, real audiences. I chased trends and wrote scripts that had to land in seconds, learning to think strategically and create on instinct — shaping the conversations around me into media that actually moved people.',
+        tags: ['Media strategy', 'Audience engagement', 'Trend research'], d: 180 },
+      { year: '2025–now', org: 'MANTRA4CHANGE', role: 'Communications · Present', tone: '#8FA998', toneSoft: 'rgba(143,169,152,.2)',
+        quote: 'Amplifying the voices and stories that create lasting change.',
+        body: 'Across states and programs, I translate field experiences, educator stories, and program updates into newsletters, podcast promotions, campaigns, and platform-specific content. This is storytelling with a purpose — communication built, carefully, to create lasting change in education and beyond.',
+        tags: ['Education', 'Impact stories', 'Social change'], d: 270 },
+    ];
+
+    const toolkit = [
+      { num: '01', title: 'Writing', color: '#F4C95D', note: '— notebook & pen', items: ['Blogs', 'Articles', 'Newsletters', 'Copywriting'], d: 0 },
+      { num: '02', title: 'Communication', color: '#8CC7E8', note: '— speech & strategy', items: ['Campaign Planning', 'Content Strategy', 'Social Media'], d: 80 },
+      { num: '03', title: 'Media', color: '#F28C82', note: '— mic & camera', items: ['Short-Form Video', 'Podcast Promotion', 'Story Research'], d: 160 },
+      { num: '04', title: 'Design', color: '#C8B6FF', note: '— a creative desk', items: ['Canva', 'Visual Communication', 'Creative Assets'], d: 240 },
+    ];
+
+    const cover = (c) => 'linear-gradient(135deg,' + c[0] + ',' + c[1] + ')';
+    const projects = [
+      { title: 'Suicide Prevention', kind: 'Public Service Campaign', year: '2021',
+        cover: cover(['#F7B5AE', '#F28C82']), coverLabel: 'awareness artwork',
+        tagline: 'A public-service announcement that asked an audience to pause, breathe, and reach out.',
+        overview: 'Created as a PSA for the Advertising & Public Relations module, this campaign confronted the silence around mental health and suicide. The brief was simple and enormous: make people feel less alone, and make reaching out feel possible.',
+        objectives: ['Break the stigma around asking for help', 'Make warning signs recognisable and human', 'Point viewers toward real support, gently'],
+        process: 'I started with the language people actually use when they are struggling — and the language that helps. The script traded statistics for a single, quiet human moment, letting empathy carry the message rather than fear.',
+        outcomes: ['A complete PSA concept, script & art direction', 'A tone that informs without alarming', 'A reusable template for awareness messaging'],
+        gallery: ['key poster', 'storyboard', 'final still'], d: 0 },
+      { title: 'Guhar — Radio Magazine', kind: 'Broadcast Storytelling', year: '2022',
+        cover: cover(['#A9D6F0', '#8CC7E8']), coverLabel: 'radio waveforms',
+        tagline: 'A radio magazine built for the ear — where sound, silence, and voice do the storytelling.',
+        overview: 'Produced for the Advanced Broadcast Media module, "Guhar" is a radio magazine that strings together segments, interviews, and sound design into a single listenable arc. It taught me to write for the ear, not the eye.',
+        objectives: ['Design a cohesive magazine-style broadcast', 'Balance information with atmosphere & sound', 'Hold a listener through a full running order'],
+        process: 'I built the running order like a piece of music — pacing segments, scripting links, and choosing beds and transitions so the half-hour felt intentional from the first second to the last sign-off.',
+        outcomes: ['A full broadcast running order & scripts', 'Segment design from interview to ambience', 'A confident grasp of audio-first narrative'],
+        gallery: ['running order', 'studio session', 'sound map'], d: 90 },
+      { title: 'Mard Ka Dard', kind: 'Social Media Campaign', year: '2022',
+        cover: cover(['#D8C9FF', '#C8B6FF']), coverLabel: 'campaign moodboard',
+        tagline: 'A social campaign that gave men permission to feel — and to say so out loud.',
+        overview: '"Mard Ka Dard" took on the quiet weight of masculinity and emotional silence, building a social-first campaign that reframed vulnerability as strength rather than weakness.',
+        objectives: ['Challenge the "men don\u2019t cry" script', 'Make emotional honesty feel shareable', 'Spark conversation, not just impressions'],
+        process: 'I shaped a platform-specific content plan — punchy hooks, honest captions, and a visual moodboard warm enough to feel safe. Every post was written to be saved and sent, not just scrolled past.',
+        outcomes: ['A full campaign concept & content calendar', 'A distinct, empathetic visual identity', 'Messaging designed for genuine sharing'],
+        gallery: ['hero post', 'caption set', 'story series'], d: 180 },
+      { title: 'Reporting & Editing', kind: 'Print Journalism', year: '2021',
+        cover: cover(['#B4CBBD', '#8FA998']), coverLabel: 'newspaper editorial',
+        tagline: 'A newsletter article, reported and edited to print standard — where craft lives in the details.',
+        overview: 'Written and edited for the "Reporting & Editing for Print" module, this newsletter piece is where the fundamentals came together: research, structure, accuracy, and the discipline of a clean, edited line.',
+        objectives: ['Report a story with accuracy & fairness', 'Structure for clarity and pace', 'Edit ruthlessly to print standard'],
+        process: 'From the lead down, every paragraph earned its place. I drafted, cut, and re-cut — chasing the version where nothing could be removed without losing meaning.',
+        outcomes: ['A polished, print-ready feature article', 'Editing instincts that still guide my work', 'A respect for the rigour behind good copy'],
+        gallery: ['layout proof', 'edited draft', 'final spread'], d: 270 },
+    ];
+    const projectsWithOpen = projects.map((p, i) => ({ ...p, open: () => this.setState({ active: i }) }));
+
+    const interests = [
+      { label: 'Drama & Theatre', cap: 'on stage, in character', cover: '#F7B5AE', shot: 'stage photo', shot2: '', rot: '-4deg', d: 0 },
+      { label: 'Music', cap: 'a constant soundtrack', cover: '#A9D6F0', shot: 'record / playlist', rot: '3deg', d: 80 },
+      { label: 'Photography', cap: 'collecting moments', cover: '#F4D77E', shot: 'a frame I loved', rot: '-2deg', d: 160 },
+      { label: 'Languages', cap: 'new ways to be understood', cover: '#CDBEF6', shot: 'scribbled phrases', rot: '4deg', d: 240 },
+    ];
+
+    const languages = [
+      { name: 'English', native: 'En', code: 'ENG', level: 'Fluent', color: '#8CC7E8', rot: '-5deg', d: 0 },
+      { name: 'Hindi', native: 'अ', code: 'HIN', level: 'Native', color: '#F28C82', rot: '3deg', d: 80 },
+      { name: 'Odia', native: 'ଓ', code: 'ODI', level: 'Native', color: '#8FA998', rot: '-3deg', d: 160 },
+      { name: 'Korean', native: '한', code: 'KOR', level: 'Learning', color: '#C8B6FF', rot: '4deg', d: 240 },
+    ];
+
+    const active = this.state.active == null ? null : projectsWithOpen[this.state.active];
+
+    return {
+      navStyle, timeline, toolkit, interests, languages,
+      projects: projectsWithOpen,
+      active,
+      close: () => this.setState({ active: null }),
+      stop: (e) => e.stopPropagation(),
+    };
+  }
+}
+</script>
+</body>
+</html>
